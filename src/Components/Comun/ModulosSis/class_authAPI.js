@@ -24,7 +24,9 @@ export default class ReqResDatos_auth_API {
   }
 
   SendDatsAPI = async (proceso, axios) => {
-    console.log(`solicitando credenciales para ${this.user} en ${this.id_prod}`)
+    console.log(
+      `solicitando credenciales para ${this.user} en ${this.id_prod}: ${proceso}`
+    )
     const path_API = `https://arcontroller-back-cytk.vercel.app/api/arcontroller/users/${proceso}`
     //'https://arcbackendapi.up.railway.app:6662/api/arcontroller/users/auth'
     //+
