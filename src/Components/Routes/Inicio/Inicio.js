@@ -126,7 +126,7 @@ export default class Inicio extends Component {
         this.resptValideCookies.msj
       )
       setTimeout(() => {
-        window.location = `https://arcontroller.vercel.app/${this.resptValideCookies.routeTarjet}`
+        window.location = `https://arcontroller-front.vercel.app/${this.resptValideCookies.routeTarjet}`
       }, 3000)
     }
     if (
@@ -141,7 +141,7 @@ export default class Inicio extends Component {
         this.resptValideCookies.msj
       )
       setTimeout(() => {
-        window.location = `https://arcontroller.vercel.app/${this.resptValideCookies.routeTarjet}`
+        window.location = `https://arcontroller-front.vercel.app/${this.resptValideCookies.routeTarjet}`
       }, 3000)
     }
   }

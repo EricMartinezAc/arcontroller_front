@@ -1,5 +1,9 @@
 export default function ValideCookies (route, cookies) {
-  let resp = { value: false, msj: '', routeTarjet: 'http://localhost:3000/' }
+  let resp = {
+    value: false,
+    msj: '',
+    routeTarjet: 'https://arcontroller-front.vercel.app/'
+  }
   // let valide_email = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/
 
   try {
@@ -24,7 +28,7 @@ export default function ValideCookies (route, cookies) {
       resp.value = true
       resp.msj = 'Ya se encuentra una sesión activa'
       resp.routeTarjet =
-        'http://localhost:3000/acrcontroller/web/main/Dashboard'
+        'https://arcontroller-front.vercel.app/acrcontroller/web/main/Dashboard'
     }
   } catch (error) {
     resp.routeTarjet = 'Inicio'
