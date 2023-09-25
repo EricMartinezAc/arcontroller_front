@@ -1,0 +1,211 @@
+.logo {
+    width: 200px;
+    height: 150px;
+    margin: 30px 0;
+}
+
+.title_ {
+    margin: 10px 0 30px 0;
+}
+
+.FormAuth {
+    position: relative;
+}
+
+.FormAuth input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #B80F22;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+
+.FormAuth {
+    padding: auto;
+    margin: 0 auto;
+}
+
+.FormAuth h1 {
+    padding: 0;
+    width: 95%;
+    margin: 0 0 20px;
+    text-align: center;
+    font-size: 100%;
+}
+
+.FormAuth input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.FormAuth input[type="text"],
+.FormAuth input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #FFF;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    width: 80%;
+    background: transparent;
+    font-size: 16px;
+}
+
+.FormAuth input[type="text"]:hover ,
+.FormAuth input[type="password"]:hover {
+    background-color: #ded;
+    border-radius: 3%;
+    height: 50px;
+}
+
+.FormRegtr input[type="text"] {
+    border: none;
+    border-bottom: 1px solid #FFF;
+    background: transparent;
+    outline: none;
+    height: 30px;
+    background: transparent;
+    font-size: 14px;
+}
+
+.FormAuth input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #B80F22;
+    font-size: 18px;
+    border-radius: 20px;
+    color: #ded;
+}
+
+.FormAuth input[type="submit"]:hover {
+    height: 60px;
+    font-size: 25px;
+    border-radius: 50px;
+}
+
+.FormAuth a {
+    text-decoration: none;
+    line-height: 20px;
+    color: #232
+}
+
+.FormAuth a:hover {
+    font-weight: 700;
+    color: rgb(56, 118, 242);
+}
+
+.footer-text-ise {
+    color: #232;
+    font-size: 12px;
+}
+
+.footer-text-aut {
+}
+
+@media (max-width: 1200px) {}
+
+@media (max-width: 1000px) {}
+
+@media (max-width: 900px) {}
+
+@media (max-width: 700px) {}
+
+@media (max-width: 600px) {
+    .logo {
+        left: calc(40% - 15%);
+    }
+}
+
+@media (max-width: 500px) {}
+
+@media (max-width: 400px) {
+    .logo {
+        top: 0;
+        left: calc(30% - 15%);
+    }
+}
+
+@media (max-width: 350px) {
+    .logo {
+        left: calc(25% - 15%);
+    }
+}
+
+@media (max-width: 300px) {
+    .logo {
+        display: none;
+    }
+}
+
+@media (max-height: 550px) {
+    .logo {
+        width: 150px;
+        height: 100px;
+        top: -30px;
+        left: calc(80% - 10%);
+    }
+}
+
+@media (max-height: 430px) {
+    .logo {
+        width: 20%;
+        height: 15%;
+    }
+
+    .FormAuth {
+        top: 0px;
+    }
+
+    a,
+    .FormAuth input[type="text"],
+    .FormAuth input[type="password"] {
+        height: 8px;
+        font-size: 10px;
+    }
+
+    .FormAuth input[type="submit"] {
+        height: 35px;
+        font-size: 18px;
+    }
+}
+
+@media (max-height: 400px) {
+    .logo {
+        width: 15%;
+        height: 10%;
+    }
+
+    a,
+    .FormAuth input[type="text"],
+    .FormAuth input[type="password"] {
+        height: 6px;
+        font-size: 9px;
+    }
+
+    .FormAuth input[type="submit"] {
+        height: 20px;
+        font-size: 10px;
+    }
+}
+
+@media (max-height: 330px) {
+    .footer-text-ise {
+        display: none;
+    }
+
+    .logo {
+        top: 0px;
+    }
+}
+
+@media (max-height: 280px) {
+    .Content {
+        display: none;
+    }
+
+    .noAppable {
+        display: inline;
+    }
+}

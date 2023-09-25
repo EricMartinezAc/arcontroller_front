@@ -1,0 +1,164 @@
+.FormRegtr {
+    position: relative;
+}
+
+.title {
+    width: 100%;
+    color: #FFF;
+    text-align: center;
+    margin-top: -30px;
+}
+
+.FormRegtr input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #B80F22;
+    color: #FFF;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.FormRegtr .fileInput {
+    background: #4533B8;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 to 0;
+    min-height: 15px;
+    overflow: hidden;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    width: 97%;
+    border-bottom: 1px solid #FFF ;
+}
+
+.FormRegtr {
+    padding: auto;
+    margin: 0 auto;
+}
+
+.FormRegtr h1 {
+    padding: 0;
+    margin: 0 0 20px;
+    text-align: center;
+    font-size: 100%;
+}
+
+.FormRegtr input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.FormRegtr input[type="text"],
+.FormRegtr input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #FFF;
+    background: transparent;
+    outline: none;
+    height: 30px;
+    color: #FFF;
+    background: transparent;
+    font-size: 14px;
+}
+
+.FormRegtr input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #B80F22;
+    color: #FFF;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.FormRegtr input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #B80F22;
+    color: #FFF;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.FormRegtr a {
+    text-decoration: none;
+    line-height: 20px;
+}
+
+.FormRegtr a:hover {
+    color: #FFF;
+    font-weight: 700;
+}
+
+.footer-text-ise {
+    color: darkgray;
+    font-size: 12px;
+}
+
+.footer-text-reg {
+    color: #FFF;
+}
+
+@media (max-width: 1200px) {}
+
+@media (max-width: 1000px) {}
+
+@media (max-width: 900px) {}
+
+@media (max-width: 700px) {}
+
+@media (max-width: 500px) {}
+
+@media (max-width: 400px) {
+    .FormRegtr {
+        top: 0px;
+    }
+}
+
+@media (max-width: 300px) {}
+
+@media (max-height: 550px) {}
+
+@media (max-height: 430px) {
+
+    a,
+    .FormRegtr input[type="text"],
+    .FormRegtr input[type="password"] {
+        height: 8px;
+        font-size: 10px;
+    }
+
+    .FormRegtr input[type="submit"] {
+        height: 35px;
+        font-size: 18px;
+    }
+}
+
+@media (max-height: 300px) {
+
+    a,
+    .FormRegtr input[type="text"],
+    .FormRegtr input[type="password"] {
+        height: 6px;
+        font-size: 9px;
+    }
+
+    .FormRegtr input[type="submit"] {
+        height: 20px;
+        font-size: 10px;
+    }
+}
+
+@media (max-height: 260px) {
+    .Content {
+        display: none;
+    }
+
+    .noAppable {
+        display: inline;
+    }
+}

@@ -1,0 +1,91 @@
+.Content {
+    /* content */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.authContent {
+    margin-top: 50px;
+    width: 30%;
+    height: 90%;
+    background: linear-gradient(180deg, #4533B8 15.62%, #B76A3F 84.9%);
+    border-radius: 3%;
+    padding: 10px 30px;
+}
+
+.section_alertCookies{
+    margin: 0 20px;
+    background-color: #ede;
+}
+
+.section_inicio {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    background-image: url('../../../Assets/Imgs/fondos/abstract-vector.jpg');
+    background-repeat: no-repeat;
+    background-position-x: -50%;
+}
+
+.aside_inicio {
+    padding: 30px;
+    border-left: #ece 2px solid ;
+    margin: 0 ;
+    padding: 0 auto;
+}
+
+@media (max-width: 1200px) {
+    .authContent {
+        width: 50%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .authContent {
+        width: 60%;
+    }
+}
+
+@media (max-width: 900px) {
+    .authContent {
+        width: 70%;
+    }
+}
+
+@media (max-width: 700px) {
+    .authContent {
+        width: 80%;
+    }
+}
+
+@media (max-width: 500px) {
+    .authContent {
+        width: 90%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .authContent {
+        width: 95%;
+        height: 90%;
+    }
+}
+
+@media (max-width: 300px) {
+    .authContent {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-height: 260px) {
+    .authContent {
+        display: none;
+    }
+
+    .noAppable {
+        display: inline;
+    }
+}

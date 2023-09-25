@@ -1,0 +1,27 @@
+<svg viewBox='0 0 300 300' width='300' height='300' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+  <defs>
+    <g id='circulos' stroke ='white' stroke-width ='6' fill ='silver'>
+      <circle cx ='0' cy ='0' r ='50' />
+      <circle cx ='0' cy ='0' r ='35' />
+      <circle cx ='0' cy ='0' r ='20' />  
+      <circle cx ='0' cy ='0' r ='5' fill='white' />
+    </g>
+    <pattern id='jp' x='0' y='0' width='100' height='50' patternUnits='userSpaceOnUse'>
+      <g id='japones'> 
+        <use xlink:href ='#circulos' x='0' y='25' /> 
+        <use xlink:href ='#circulos' x='100' y='25' /> 
+        <use xlink:href ='#circulos' x='50' y='50' /> 
+        <use xlink:href ='#circulos' x='0' y='75' /> 
+        <use xlink:href ='#circulos' x='100' y='75' />
+      </g>
+    </pattern>
+  </defs> 
+    <rect width='100%' height='100%' fill='#e28082'/>
+    <rect width='100%' height='100%' fill='url(#jp)'/>
+</svg>
+
+
+<svg viewBox='0 0 100 50' width='100' height='50'>
+   <desc>el grupo para cerar el patrón</desc>
+   <use xlink:href ='#japones' /> 
+</svg>
