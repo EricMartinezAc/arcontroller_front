@@ -27,7 +27,7 @@ export default class ReqResDatos_auth_API {
     console.log(
       `solicitando credenciales para ${this.user} en ${this.id_prod}: ${proceso}`
     )
-    const path_API = `https://arcontroller-back-cytk.vercel.app/api/arcontroller/users/${proceso}`
+    const path_API = `https://arcontroller-backend-api.onrender.com/api/arcontroller/users/${proceso}`
     //'https://arcbackendapi.up.railway.app:6662/api/arcontroller/users/auth'
     //+
     //https://arcbackendapi.up.railway.app:5817/api/arcontroller/users/auth'
@@ -77,7 +77,7 @@ export default class ReqResDatos_auth_API {
 
     await axios
       .get(
-        `https://arcontroller-back-cytk.vercel.app/api/arcontroller/app/dashboard`,
+        `https://arcontroller-backend-api.onrender.com/api/arcontroller/app/dashboard`,
         {
           headers: {
             autorization: `Bearer ${auth1}`

@@ -10,7 +10,7 @@ import axios from 'axios'
 import Logo from '../../../../Assets/Imgs/logos/logo_632x512.png'
 import './Login.css'
 import ReqResDatos_auth_API from '../../../Comun/ModulosSis/class_authAPI'
-import RestartApp from '../../../Comun/ModulosSis/RestarApp'
+//import RestartApp from '../../../Comun/ModulosSis/RestarApp'
 
 //métodos
 import {
@@ -65,7 +65,7 @@ export default class Login extends Component {
         await setTimeout(async () => {
           let RespAPI = await reqResDatos_auth_API.SendDatsAPI('auth', axios)
           if (RespAPI === null) {
-            RestartApp()
+            //RestartApp()
             alert('no se obtubo respuesta del servidor')
           }
           await this.CambiarEstadoLoading()
