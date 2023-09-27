@@ -58,10 +58,10 @@ export default class ReqResDatos_auth_API {
         'Content-Type': 'application/json',
         'access-control-allow-origin': '*'
       },
-      body: {
+      body: JSON.stringify({
         process_: proceso,
         datos_: datos
-      }
+      })
     })
       .then(res => res.json())
       .then(data => {
