@@ -37,37 +37,37 @@ export default class ReqResDatos_auth_API {
 
     let return_ = null
 
-    await axios
-      .post(path_API, {
+    // await axios
+    //   .post(path_API, {
+    //     process_: proceso,
+    //     datos_: datos
+    //   })
+    //   .then(response => {
+    //     return_ = {
+    //       value: response.data
+    //     }
+    //   })
+    //   .catch(error => {
+    //     console.log(error)
+    //   })
+
+    await fetch(path_API, {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json',
+        'access-control-allow-origin': '*'
+      },
+      body: {
         process_: proceso,
         datos_: datos
+      }
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        return_ = data
       })
-      .then(response => {
-        return_ = {
-          value: response.data
-        }
-      })
-      .catch(error => {
-        console.log(error)
-      })
-
-    // await fetch(path_auth_API, {
-    //     method: "POST",
-    //     mode: "cors",
-    //     headers: {
-    //         "Content-Type": "application/json",
-    //         'access-control-allow-origin': '*'
-    //     },
-    //     body: JSON.stringify({
-    //         process_: 'auth',
-    //         datos_: constr_
-    //     })
-    // })
-    // .then(res => res.json())
-    // .then(data => {
-    //     console.log(data)
-    //     return_ = data
-    // })
 
     return await return_
   }
