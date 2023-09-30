@@ -1,3 +1,5 @@
+import pages from '../../../const/pages'
+
 export default class ReqResDatos_auth_API {
   constructor () {
     this.user = ''
@@ -25,51 +27,18 @@ export default class ReqResDatos_auth_API {
 
   SendDatsAPI = async (proceso, axios) => {
     console.log(
-      `solicitando credenciales para ${this.user} en ${this.id_prod}: ${proceso}`
+      `solicitando credenciales para ${this.user} en ${this.id_prod}: ${proceso} a ${pages.server}`
     )
-    const path_API = `https://arcontroller-backend-api.onrender.com/api/arcontroller/users/${proceso}`
-    //'https://arcbackendapi.up.railway.app:6662/api/arcontroller/users/auth'
-    //+
-    //https://arcbackendapi.up.railway.app:5817/api/arcontroller/users/auth'
+    const path_API = `https://${pages.server}/api/arcontroller/users/${proceso}`
 
     const datos = await this.GetDatosAuth()
     console.log(datos, 'enviando...')
 
     let return_ = null
 
-    // await axios
-    //   .post(path_API, {
-    //     process_: proceso,
-    //     datos_: datos
-    //   })
-    //   .then(response => {
-    //     return_ = {
-    //       value: response.data
-    //     }
-    //   })
-    //   .catch(error => {
-    //     console.log(error)
-    //   })
-
-    await fetch(path_API, {
-      method: 'POST',
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'application/json',
-        'access-control-allow-origin': '*'
-      },
-      body: JSON.stringify({
-        process_: proceso,
-        datos_: datos
-      })
-    })
-      .then(res => res.json())
-      .then(data => {
-        console.log(data)
-        return_ = data
-      })
-
-    return await return_
+    fetch('https://jsonplaceholder.typicode.com/todos/1')
+      .then(response => response.json())
+      .then(json => console.log(json))
   }
 
   GetAPP = async (auth1, axios) => {

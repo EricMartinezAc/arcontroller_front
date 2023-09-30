@@ -64,25 +64,26 @@ export default class Login extends Component {
         //envio de datos
         await setTimeout(async () => {
           let RespAPI = await reqResDatos_auth_API.SendDatsAPI('auth', axios)
-          if (RespAPI === null) {
+          if (RespAPI === null || typeof RespAPI === 'undefined') {
             //RestartApp()
             alert('no se obtubo respuesta del servidor')
+          } else {
+            if ((await RespAPI.value.valor) === 400) {
+              await AsigneCookies('token', RespAPI.value.respt, cookies)
+              await AsigneCookies('id_prod', this.state.id_prod, cookies)
+              await AsigneCookies('user', this.state.user, cookies)
+              await reqResDatos_auth_API.GetAPP(RespAPI.value.respt, axios)
+            } else {
+              await this.CambiarEstadoDescriptionAlerts(
+                true,
+                'warning',
+                'AUTENTICACIÓN DE USUARIO',
+                'Recuerda limpiar las cookies de tu browser y tener control sobre ellas. ',
+                RespAPI.value.msj
+              )
+            }
           }
           await this.CambiarEstadoLoading()
-          if ((await RespAPI.value.valor) === 400) {
-            await AsigneCookies('token', RespAPI.value.respt, cookies)
-            await AsigneCookies('id_prod', this.state.id_prod, cookies)
-            await AsigneCookies('user', this.state.user, cookies)
-            await reqResDatos_auth_API.GetAPP(RespAPI.value.respt, axios)
-          } else {
-            await this.CambiarEstadoDescriptionAlerts(
-              true,
-              'warning',
-              'AUTENTICACIÓN DE USUARIO',
-              'Recuerda limpiar las cookies de tu browser y tener control sobre ellas. ',
-              RespAPI.value.msj
-            )
-          }
         }, 2000)
       } catch (error) {
         alert('error enviando datos al servidor, revise su conexion: ' + error)
