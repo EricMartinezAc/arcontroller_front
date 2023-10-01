@@ -1,5 +1,3 @@
-import pages from '../../../const/pages'
-
 export default class ReqResDatos_auth_API {
   constructor () {
     this.user = ''
@@ -27,9 +25,9 @@ export default class ReqResDatos_auth_API {
 
   SendDatsAPI = async (proceso, axios) => {
     console.log(
-      `solicitando credenciales para ${this.user} en ${this.id_prod}: ${proceso} a ${pages.server}`
+      `solicitando credenciales para ${this.user} en ${this.id_prod}: ${proceso} `
     )
-    const path_API = `http://${pages.server.local}/api/arcontroller/users/${proceso}`
+    const path_API = `https://arc-backend-hjno.onrender.com/api/arcontroller/users/${proceso}`
 
     const datos = await this.GetDatosAuth()
     console.log(datos, 'enviando...')
@@ -60,26 +58,29 @@ export default class ReqResDatos_auth_API {
     console.log(`transfiriendo a APP`)
 
     await axios
-      .get(`http://${pages.server.local}/api/arcontroller/app/dashboard`, {
-        headers: {
-          autorization: `Bearer ${auth1}`
+      .get(
+        `https://arc-backend-hjno.onrender.com/api/arcontroller/app/dashboard`,
+        {
+          headers: {
+            autorization: `Bearer ${auth1}`
+          }
         }
-      })
+      )
       .then(resp => {
         console.log(resp.data.valor)
         setTimeout(() => {
           if (resp.data.valor === 100) {
-            window.location = `http://${pages.this.server}/acrcontroller/web/main/Dashboard`
+            window.location = `https://arcontroller-front.vercel.app/acrcontroller/web/main/Dashboard`
           } else {
             alert(resp.data.msj)
-            window.location = `http://${pages.this.server}`
+            window.location = `https://arcontroller-front.vercel.app/`
           }
         }, 300)
       })
       .catch(err => {
         alert('Error en generación de token:', err)
         setTimeout(() => {
-          window.location = `http://${pages.this.server}`
+          window.location = `https://arcontroller-front.vercel.app/`
         }, 300)
         console.error('Error :', err)
       })
