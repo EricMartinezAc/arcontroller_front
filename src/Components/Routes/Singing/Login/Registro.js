@@ -73,10 +73,10 @@ export default class Registro extends Component {
           await this.CambiarEstadoLoading()
           await this.CambiarEstadoDescriptionAlerts(
             true,
-            RespAPI.value.valor === 300 ? 'success' : 'warning',
+            RespAPI.valor === 300 ? 'success' : 'warning',
             'REGISTRO DE USUARIO',
             'Recuerda limpiar las cookies de tu browser y tener control sobre ellas. ',
-            RespAPI.value.msj
+            RespAPI.msj
           )
           setTimeout(() => {
             window.location = `http://localhost:3000/Singin`
