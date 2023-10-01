@@ -64,22 +64,25 @@ export default class Login extends Component {
         //envio de datos
         await setTimeout(async () => {
           let RespAPI = await reqResDatos_auth_API.SendDatsAPI('auth', axios)
-          if (RespAPI === null || typeof RespAPI === 'undefined') {
+          if ((await RespAPI) === null || (await RespAPI) === undefined) {
             //RestartApp()
             alert('no se obtubo respuesta del servidor')
           } else {
-            if ((await RespAPI.value.valor) === 400) {
-              await AsigneCookies('token', RespAPI.value.respt, cookies)
+            if (RespAPI.valor === 400) {
+              await AsigneCookies('token', RespAPI.respt, cookies)
               await AsigneCookies('id_prod', this.state.id_prod, cookies)
               await AsigneCookies('user', this.state.user, cookies)
-              await reqResDatos_auth_API.GetAPP(RespAPI.value.respt, axios)
+              console.log('====================================')
+              console.log('redireccionando...')
+              console.log('====================================')
+              await reqResDatos_auth_API.GetAPP(RespAPI.respt, axios)
             } else {
               await this.CambiarEstadoDescriptionAlerts(
                 true,
                 'warning',
                 'AUTENTICACIÓN DE USUARIO',
                 'Recuerda limpiar las cookies de tu browser y tener control sobre ellas. ',
-                RespAPI.value.msj
+                RespAPI.msj
               )
             }
           }

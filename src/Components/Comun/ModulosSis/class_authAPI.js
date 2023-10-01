@@ -29,45 +29,57 @@ export default class ReqResDatos_auth_API {
     console.log(
       `solicitando credenciales para ${this.user} en ${this.id_prod}: ${proceso} a ${pages.server}`
     )
-    const path_API = `https://${pages.server}/api/arcontroller/users/${proceso}`
+    const path_API = `http://${pages.server.local}/api/arcontroller/users/${proceso}`
 
     const datos = await this.GetDatosAuth()
     console.log(datos, 'enviando...')
-
-    let return_ = null
-
-    fetch('https://jsonplaceholder.typicode.com/todos/1')
-      .then(response => response.json())
-      .then(json => console.log(json))
+    try {
+      return fetch(path_API, {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json',
+          'access-control-allow-origin': '*'
+        },
+        body: JSON.stringify({
+          process_: proceso,
+          datos_: datos
+        })
+      })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data)
+          return data
+        })
+    } catch (error) {
+      return null
+    }
   }
 
   GetAPP = async (auth1, axios) => {
     console.log(`transfiriendo a APP`)
 
     await axios
-      .get(
-        `https://arcontroller-backend-api.onrender.com/api/arcontroller/app/dashboard`,
-        {
-          headers: {
-            autorization: `Bearer ${auth1}`
-          }
+      .get(`http://${pages.server.local}/api/arcontroller/app/dashboard`, {
+        headers: {
+          autorization: `Bearer ${auth1}`
         }
-      )
+      })
       .then(resp => {
         console.log(resp.data.valor)
         setTimeout(() => {
           if (resp.data.valor === 100) {
-            window.location = `https://arcontroller-front.vercel.app/acrcontroller/web/main/Dashboard`
+            window.location = `http://${pages.this.server}/acrcontroller/web/main/Dashboard`
           } else {
             alert(resp.data.msj)
-            window.location = `https://arcontroller-front.vercel.app/`
+            window.location = `http://${pages.this.server}`
           }
         }, 300)
       })
       .catch(err => {
         alert('Error en generación de token:', err)
         setTimeout(() => {
-          window.location = `https://arcontroller-front.vercel.app/`
+          window.location = `http://${pages.this.server}`
         }, 300)
         console.error('Error :', err)
       })
