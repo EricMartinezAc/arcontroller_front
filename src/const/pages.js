@@ -1,11 +1,6 @@
 const pages = {
-  this: {
-    server: 'localhost:3000'
-  },
-  server: {
-    local: 'localhost:2023',
-    pruebaAPI: 'https://jsonplaceholder.typicode.com/todos/1'
-  }
+  this: 'https://arcontroller-front.vercel.app',
+  remoteAPI: 'https://arc-backend-hjno.onrender.com'
 }
 
 module.exports = pages

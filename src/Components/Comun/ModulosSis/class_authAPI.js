@@ -1,3 +1,5 @@
+import pages from '../../../const/pages'
+
 export default class ReqResDatos_auth_API {
   constructor () {
     this.user = ''
@@ -27,7 +29,7 @@ export default class ReqResDatos_auth_API {
     console.log(
       `solicitando credenciales para ${this.user} en ${this.id_prod}: ${proceso} `
     )
-    const path_API = `https://arc-backend-hjno.onrender.com/api/arcontroller/users/${proceso}`
+    const path_API = `${pages.remoteAPI}/api/arcontroller/users/${proceso}`
 
     const datos = await this.GetDatosAuth()
     console.log(datos, 'enviando...')
@@ -58,29 +60,26 @@ export default class ReqResDatos_auth_API {
     console.log(`transfiriendo a APP`)
 
     await axios
-      .get(
-        `https://arc-backend-hjno.onrender.com/api/arcontroller/app/dashboard`,
-        {
-          headers: {
-            autorization: `Bearer ${auth1}`
-          }
+      .get(`${pages.remoteAPI}/api/arcontroller/app/dashboard`, {
+        headers: {
+          autorization: `Bearer ${auth1}`
         }
-      )
+      })
       .then(resp => {
         console.log(resp.data.valor)
         setTimeout(() => {
           if (resp.data.valor === 100) {
-            window.location = `https://arcontroller-front.vercel.app/acrcontroller/web/main/Dashboard`
+            window.location = `${pages.this}/acrcontroller/web/main/Dashboard`
           } else {
             alert(resp.data.msj)
-            window.location = `https://arcontroller-front.vercel.app/`
+            window.location = `${pages.this}`
           }
         }, 300)
       })
       .catch(err => {
         alert('Error en generación de token:', err)
         setTimeout(() => {
-          window.location = `https://arcontroller-front.vercel.app/`
+          window.location = `${pages.this}`
         }, 300)
         console.error('Error :', err)
       })

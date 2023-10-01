@@ -1,3 +1,5 @@
+import pages from '../../../const/pages'
+
 export default class ReqResDatos_API {
   constructor () {
     this.user = ''
@@ -22,21 +24,18 @@ export default class ReqResDatos_API {
 
   ConsumirDatos = async (auth1, id_prod, user, proceso, axios) => {
     await axios
-      .get(
-        `https://arc-backend-hjno.onrender.com/api/arcontroller/load/data/startapp`,
-        {
-          headers: {
-            autorization: `Bearer ${auth1} ${id_prod} ${user} ${proceso}`
-          }
+      .get(`${pages.remoteAPI}/api/arcontroller/load/data/startapp`, {
+        headers: {
+          autorization: `Bearer ${auth1} ${id_prod} ${user} ${proceso}`
         }
-      )
+      })
       .then(resp => {
         console.log(resp)
       })
       .catch(err => {
         alert('Error en generación de token:', err)
         setTimeout(() => {
-          window.location = `https://arcontroller-front.vercel.app/`
+          window.location = `${pages.this}`
         }, 300)
         console.error('Error :', err)
       })
